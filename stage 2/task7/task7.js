@@ -55,16 +55,19 @@ var rootNode = document.getElementById('wrapper');
 window.onload = function() {
   //按钮绑定事件
   document.getElementById('preorder').onclick = function() {
+    orderQueue=[];//每次遍历前将节点数组清空，不然后续的遍历会重复遍历
     preOrder(rootNode);
     render();
   }
 
   document.getElementById('inorder').onclick = function() {
+    orderQueue=[];
     inOrder(rootNode);
     render();
   }
 
   document.getElementById('postorder').onclick = function() {
+    orderQueue=[];
     postOrder(rootNode);
     render();
   }  
